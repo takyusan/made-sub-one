@@ -14,32 +14,33 @@ import kotlinx.android.synthetic.main.list_movie_main.view.textViewTitle
 import kotlinx.android.synthetic.main.list_movie_main.view.textViewYear
 
 
-class Adapter( var context:Context, var listMovie : List<Movie>):BaseAdapter() {
+class Adapter( var context:Context, var listMovie : ArrayList<MovieModels>):BaseAdapter() {
 
-    override fun getView(position: Int, convertView: View, parent: ViewGroup?): View? {
-        var view = convertView
-        var viewHolder = ViewHolder()
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        var convertView = convertView
+        val holder: ViewHolder
 
-        if (view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.list_movie_main, null)
+        if (convertView == null) {
+            holder = ViewHolder()
+            val inflater = context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            convertView = inflater.inflate(R.layout.list_movie_main, null, true)
 
-            viewHolder.imageViewPoster = view.imageViewMovie
-            viewHolder.textViewTitle = view.textViewTitle
-            viewHolder.textViewYear = view.textViewYear
-            viewHolder.textViewDes = view.textViewDesc
+            holder.textViewTitle = convertView!!.findViewById(R.id.textViewTitle) as TextView
+            holder.textViewYear = convertView!!.findViewById(R.id.textViewYear) as TextView
+            holder.textViewDes = convertView!!.findViewById(R.id.textViewDesc) as TextView
+            holder.imageViewPoster = convertView.findViewById(R.id.imageViewMovie) as ImageView
 
-            view.tag = viewHolder
+            convertView.tag = holder
         } else {
-            viewHolder = view.tag as ViewHolder
+            // the getTag returns the viewHolder object set as a tag to the view
+            holder = convertView.tag as ViewHolder
         }
-        val movie = listMovie[position]
 
-        viewHolder.textViewTitle.text = "${movie.title}"
-        viewHolder.textViewYear.text = "${movie.year}"
-        viewHolder.textViewDes.text = "${movie.overview}"
-        viewHolder.imageViewPoster.setImageDrawable(getImageDrawable(movie.poster))
+        holder.textViewTitle!!.setText(listMovie[position].getTitleMovie())
+        holder.imageViewPoster!!.setImageResource(listMovie[position].getImage_drawables())
 
-        return view
+        return convertView
     }
 
     override fun getItem(position: Int): Any {
@@ -52,11 +53,6 @@ class Adapter( var context:Context, var listMovie : List<Movie>):BaseAdapter() {
 
     override fun getCount(): Int {
         return listMovie.size
-    }
-
-    private fun getImageDrawable(poster:String):Drawable{
-        val id = context.resources.getIdentifier(poster, "drawable", context.packageName)
-        return context.resources.getDrawable(id)
     }
 
     class ViewHolder{
