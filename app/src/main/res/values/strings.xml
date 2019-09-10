@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">CatalogMovieMadeOne</string>
+    <string name="title">Bumble B</string>
+    <string name="year">(2019)</string>
+    <string name="selengkapnya">Selengkapnya</string>
+    <string name="desc">A former American G.I. joins a yakuza family after his release from prison in post-World War II
+        Osaka.
+    </string>
+
+    <string-array name="title">
+        <item>Krystal</item>
+        <item>Iruttu Araiyil Murattu Kuthu</item>
+        <item>Imagine</item>
+        <item>Age</item>
+        <item>Iruttu Araiyil Murattu Kuthu</item>
+        <item>The Bubble</item>
+        <item>Hoax</item>
+        <item>London Fields</item>
+        <item>Splendona</item>
+        <item>Andante</item>
+        <item>Scammers</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2019</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Wei’s only son, Yu-Hsi, died in an accident. Yu-His’s broken cellphone still sends reminders for all the
+            schedules that he can no longer follow. Wei follows them all, and opens the piano that he bought for his
+            talented…
+        </item>
+        <item>Two friends scam people online for money.</item>
+        <item>Dream and reality becomes blurred as a unique fashion model prepares for her runway debut.</item>
+        <item>Wei’s only son, Yu-Hsi, died in an accident. Yu-His’s broken cellphone still sends reminders for all the
+            schedules that he can no longer follow. Wei follows them all, and opens the piano that he bought for his
+            talented…
+        </item>
+        <item>Two friends scam people online for money.</item>
+        <item>Dream and reality becomes blurred as a unique fashion model prepares for her runway debut.</item>
+        <item>Wei’s only son, Yu-Hsi, died in an accident. Yu-His’s broken cellphone still sends reminders for all the
+            schedules that he can no longer follow. Wei follows them all, and opens the piano that he bought for his
+            talented…
+        </item>
+        <item>Two friends scam people online for money.</item>
+        <item>Dream and reality becomes blurred as a unique fashion model prepares for her runway debut.</item>
+        <item>Wei’s only son, Yu-Hsi, died in an accident. Yu-His’s broken cellphone still sends reminders for all the
+            schedules that he can no longer follow. Wei follows them all, and opens the piano that he bought for his
+            talented…
+        </item>
+        <item>Two friends scam people online for money.</item>
+    </string-array>
+
+    <array name="data_photo">
+        <item>@drawable/poster_bumblebee</item>
+        <item>@drawable/poster_a_star</item>
+        <item>@drawable/poster_birdbox</item>
+        <item>@drawable/poster_bohemian</item>
+        <item>@drawable/poster_avengerinfinity</item>
+        <item>@drawable/poster_dragonball</item>
+        <item>@drawable/poster_creed</item>
+        <item>@drawable/poster_preman</item>
+        <item>@drawable/poster_spiderman</item>
+        <item>@drawable/poster_venom</item>
+    </array>
+
+</resources>
