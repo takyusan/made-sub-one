@@ -14,7 +14,8 @@ import kotlinx.android.synthetic.main.list_movie_main.view.textViewTitle
 import kotlinx.android.synthetic.main.list_movie_main.view.textViewYear
 
 
-class Adapter( var context:Context, var listMovie : ArrayList<MovieModels>):BaseAdapter() {
+class Adapter( var context:Context, var listMovie : ArrayList<Movie>):BaseAdapter() {
+
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var convertView = convertView
@@ -26,9 +27,9 @@ class Adapter( var context:Context, var listMovie : ArrayList<MovieModels>):Base
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.list_movie_main, null, true)
 
-            holder.textViewTitle = convertView!!.findViewById(R.id.textViewTitle) as TextView
-            holder.textViewYear = convertView!!.findViewById(R.id.textViewYear) as TextView
-            holder.textViewDes = convertView!!.findViewById(R.id.textViewDesc) as TextView
+            holder.textViewTitle = convertView?.findViewById(R.id.textViewTitle) as TextView
+            holder.textViewYear = convertView?.findViewById(R.id.textViewYear) as TextView
+            holder.textViewDes = convertView?.findViewById(R.id.textViewDesc) as TextView
             holder.imageViewPoster = convertView.findViewById(R.id.imageViewMovie) as ImageView
 
             convertView.tag = holder
@@ -37,11 +38,13 @@ class Adapter( var context:Context, var listMovie : ArrayList<MovieModels>):Base
             holder = convertView.tag as ViewHolder
         }
 
-        holder.textViewTitle!!.setText(listMovie[position].getTitleMovie())
-        holder.imageViewPoster!!.setImageResource(listMovie[position].getImage_drawables())
+        holder.textViewTitle?.setText(listMovie[position].title)
+        holder.imageViewPoster?.setImageResource(listMovie[position].poster_drawable)
+
 
         return convertView
     }
+
 
     override fun getItem(position: Int): Any {
         return listMovie[position]
@@ -60,6 +63,10 @@ class Adapter( var context:Context, var listMovie : ArrayList<MovieModels>):Base
         lateinit var textViewDes:TextView
         lateinit var textViewYear:TextView
         lateinit var textViewTitle:TextView
+    }
+
+    interface OnClickListener{
+        fun onImageClicListener()
     }
 
 

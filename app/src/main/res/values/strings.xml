@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CatalogMovieMadeOne</string>
-    <string name="title">Bumble B</string>
+    <string name="title">AQUAMAN</string>
+    <string name="image_poster">image poster</string>
     <string name="year">(2019)</string>
     <string name="selengkapnya">Selengkapnya</string>
     <string name="desc">A former American G.I. joins a yakuza family after his release from prison in post-World War II
@@ -85,5 +86,7 @@
         <item>@drawable/poster_spiderman</item>
         <item>@drawable/poster_venom</item>
     </array>
+
+    <string name="appbar" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
 
 </resources>
